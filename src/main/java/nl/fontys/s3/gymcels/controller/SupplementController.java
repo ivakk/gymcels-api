@@ -1,6 +1,6 @@
 package nl.fontys.s3.gymcels.controller;
 
-import com.sun.istack.NotNull;
+import jakarta.validation.constraints.NotNull;
 import nl.fontys.s3.gymcels.business.SupplementService;
 import nl.fontys.s3.gymcels.domain.Supplement;
 import org.springframework.http.HttpStatus;
