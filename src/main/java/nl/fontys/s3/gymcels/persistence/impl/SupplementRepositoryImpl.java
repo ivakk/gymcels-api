@@ -1,14 +1,13 @@
 package nl.fontys.s3.gymcels.persistence.impl;
 
+import nl.fontys.s3.gymcels.domain.OrderItem;
 import nl.fontys.s3.gymcels.domain.Supplement;
 import nl.fontys.s3.gymcels.persistence.SupplementRepository;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 
 @Repository
-@Primary
 public class SupplementRepositoryImpl implements SupplementRepository {
     @Override
     public boolean createSupplementRepo(Supplement supplement) {
@@ -33,5 +32,15 @@ public class SupplementRepositoryImpl implements SupplementRepository {
     @Override
     public ArrayList<Supplement> getAllSupplementsRepo() {
         return null;
+    }
+
+    @Override
+    public boolean orderSupplementRepo(OrderItem orderItem) {
+        return false;
+    }
+
+    @Override
+    public boolean cancelOrderSupplementRepo(int supplementId) {
+        return false;
     }
 }

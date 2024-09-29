@@ -1,18 +1,13 @@
-package nl.fontys.s3.gymcels.domain;
+package nl.fontys.s3.gymcels.dto;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@Getter @Setter
-public class Supplement {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SupplementDTO {
     private int id;
-
     private String brand;
     private String name;
     private String description;

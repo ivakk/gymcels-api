@@ -1,12 +1,15 @@
 package nl.fontys.s3.gymcels.persistence.impl;
 
+import nl.fontys.s3.gymcels.domain.OrderItem;
 import nl.fontys.s3.gymcels.domain.Supplement;
 import nl.fontys.s3.gymcels.persistence.SupplementRepository;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 
 @Repository
+@Primary
 public class FakeSupplementRepositoryImpl implements SupplementRepository {
     private ArrayList<Supplement> supplements = new ArrayList<>();
     @Override
@@ -25,9 +28,7 @@ public class FakeSupplementRepositoryImpl implements SupplementRepository {
     public boolean deleteSupplementRepo(int supplementId) {
         supplements = new ArrayList<>();
         supplements.add(new Supplement(1, "BiotechUSA", "Beef Protein", "Good Protein",
-                "very high protein", 10, 100.0));
-        Supplement supplement = new Supplement(1, "BiotechUSA", "Beef Protein", "Good Protein",
-                "very high protein", 10, 100.0);
+                "very high protein", 10, 100.0, null));
         if (supplementId <= 0) {
             return false;
         }
@@ -45,7 +46,7 @@ public class FakeSupplementRepositoryImpl implements SupplementRepository {
     @Override
     public Supplement getSupplementByIDRepo(int supplementId) {
         Supplement supplement = new Supplement(1, "BiotechUSA", "Beef Protein", "Good Protein",
-                "very high protein", 10, 10.0);
+                "very high protein", 10, 10.0, null);
         if (supplementId <= 0) {
             throw new IllegalArgumentException("Invalid supplement ID");
         }
@@ -58,11 +59,21 @@ public class FakeSupplementRepositoryImpl implements SupplementRepository {
     public ArrayList<Supplement> getAllSupplementsRepo() {
         supplements = new ArrayList<>();
         supplements.add(new Supplement(1, "BiotechUSA", "Beef Protein", "Good Protein",
-                "very high protein", 10, 10.0));
+                "very high protein", 10, 10.0, null));
         supplements.add(new Supplement(2, "Optimum Nutrition", "Whey Protein", "Mid Protein",
-                "high protein", 10, 9.0));
+                "high protein", 10, 9.0, null));
         supplements.add(new Supplement(3, "MyProtein", "Vegan Protein", "Bad Protein",
-                "no protein", 10, 20.0));
+                "no protein", 10, 20.0, null));
         return supplements;
+    }
+
+    @Override
+    public boolean orderSupplementRepo(OrderItem orderItem) {
+        return false;
+    }
+
+    @Override
+    public boolean cancelOrderSupplementRepo(int supplementId) {
+        return false;
     }
 }

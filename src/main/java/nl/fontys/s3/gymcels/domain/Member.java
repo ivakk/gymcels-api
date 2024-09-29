@@ -1,22 +1,26 @@
 package nl.fontys.s3.gymcels.domain;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.ArrayList;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Getter
-@Setter
+@Getter @Setter
+@SuperBuilder
 public class Member{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
     private String address;
-    private ArrayList<Byte> profilePicture;
+    @Lob
+    private byte[] profilePicture;
+    private boolean active;
 }
