@@ -60,4 +60,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         }
         return totalPrice;
     }
+
+    @Override
+    public void clearCart() {
+        shoppingCart.getItems().clear();
+    }
 }

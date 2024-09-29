@@ -3,7 +3,7 @@ package nl.fontys.s3.gymcels.dto;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Data
+@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class SupplementDTO {

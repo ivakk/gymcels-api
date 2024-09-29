@@ -7,4 +7,5 @@ public interface ShoppingCartService {
     boolean removeItem(OrderItemDTO orderItem);
     boolean updateItemQuantity(OrderItemDTO orderItem, int quantity);
     double calculateTotalPrice();
+    void clearCart();
 }

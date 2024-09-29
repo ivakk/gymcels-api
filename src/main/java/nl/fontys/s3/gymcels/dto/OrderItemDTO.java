@@ -4,7 +4,7 @@ import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter @Setter
 public class OrderItemDTO {
     private int customerID;
     private int supplementID;

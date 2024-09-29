@@ -3,6 +3,7 @@ package nl.fontys.s3.gymcels.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter @ToString

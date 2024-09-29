@@ -1,14 +1,14 @@
 package nl.fontys.s3.gymcels.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter @Setter
 public class ShoppingCartDTO {
+    private int customerId;
     private List<OrderItemDTO> items;
+    private double totalPrice;
 }
